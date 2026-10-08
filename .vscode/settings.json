@@ -4,5 +4,6 @@
     },
     "files.exclude": {
         "deploy": true
-    }
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }

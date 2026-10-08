@@ -2,20 +2,29 @@ deploy()
 {
     case $1 in
         build)
-            gcc src/app.cc -o build/app.cc
+            build
         ;;
         help)
             help
         ;;
         run|"")
-            gcc src/app.cc -o build/app.cc
-            ./build/app.cc
+            build
+            ./build/app
         ;;
         *)
             echo "Invalid command!!"
             help
         ;;
     esac
+}
+
+build()
+{
+    if [[ ! -e build ]]; then
+        mkdir build
+    fi
+
+    g++ src/app.cc -o build/app
 }
 
 help()
