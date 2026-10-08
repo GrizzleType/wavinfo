@@ -1,0 +1,37 @@
+deploy()
+{
+    case $1 in
+        build)
+            gcc src/app.cc -o build/app.cc
+        ;;
+        help)
+            help
+        ;;
+        run|"")
+            gcc src/app.cc -o build/app.cc
+            ./build/app.cc
+        ;;
+        *)
+            echo "Invalid command!!"
+            help
+        ;;
+    esac
+}
+
+help()
+{
+    echo \
+    "
+        deploy is a project-wide script for running,
+        and building programs written in C++.
+
+        build
+            Builds an App.exe inside ./build
+
+        run *
+            This is the default command.
+            Runs src/App.cc
+    "
+}
+
+deploy $@

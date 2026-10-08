@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "**/scripts/**": "shellscript",
+    },
+    "files.exclude": {
+        "deploy": true
+    }
+}
